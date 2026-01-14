@@ -299,86 +299,29 @@ include "koneksi.php";
 <!-- article end -->
       </div>
 
-      <div id="galery-section" class="mt-5 pt-5">
-        <section class="text-center p-3">
-          <div class="container bg-white">
-          <h1 id="galeri">Galeri Investor Sukses diSaham</h1>
-          <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
-            <div class="col">
-              <div class="card card-custom h-100">
-                <img
-                  src="andry.jpg"
-                  class="card-img-top-custom"
-                  alt="pitcture" />
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">Andry Hakim</h5>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card card-custom h-100">
-                <img
-                  src="Lokenghong.jpg"
-                  class="card-img-top-custom"
-                  alt="pitcture" />
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">Lo keng Hong</h5>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card card-custom h-100">
-                <img
-                  src="hartonogroup.jpg"
-                  class="card-img-top-custom"
-                  alt="pitcture" />
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">Hartono Bersaudara</h5>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card card-custom h-100">
-                <img
-                  src="sandiaga.jpg"
-                  class="card-img-top-custom"
-                  alt="pitcture" />
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">Sandiaga Uno</h5>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card card-custom h-100">
-                <img
-                  src="timoty.jpg"
-                  class="card-img-top-custom"
-                  alt="pitcture" />
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">Timoty Ronald</h5>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card card-custom h-100">
-                <img
-                  src="chairul.jpg"
-                  class="card-img-top-custom"
-                  alt="pitcture" />
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">Chairul Tanjung</h5>
-                </div>
-              </div>
+      <<div id="galery-section" class="mt-5 pt-5">
+  <section class="text-center p-3">
+    <div class="container bg-white">
+      <h1 id="galeri">Galeri Investor Sukses di Saham</h1>
+      <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+        <?php
+        $sql = "SELECT * FROM galery ORDER BY tanggal DESC";
+        $hasil = $conn->query($sql); 
+        while($row = $hasil->fetch_assoc()){
+        ?>
+        <div class="col">
+          <div class="card card-custom h-100">
+            <img src="img/<?= $row['gambar'] ?>" class="card-img-top" alt="Galery" />
+            <div class="card-body">
+              <h5 class="card-title fw-bold"><?= $row['nama'] ?></h5>
             </div>
           </div>
         </div>
-      </section>
-     </div>
+        <?php } // Penutup while harus di sini ?>
+      </div>
+    </div>
+  </section>
+</div>
 
 <div id="schedule-section" class="mt-5 pt-5">
     <section class="p-5 text-center"> 
