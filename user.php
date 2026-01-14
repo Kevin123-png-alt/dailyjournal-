@@ -94,7 +94,7 @@ include "upload_foto.php";
 //jika tombol simpan diklik
 if (isset($_POST['simpan'])) {
     $username = $_POST['username'];
-    $id = isset($_POST['id']) ? $_POST['id'] : null; // Pindahkan ke sini agar terdefinisi lebih awal
+    $id = isset($_POST['id']) ? $_POST['id'] : null; 
     $password = "";
 
     // Logika Pengolahan Password MD5

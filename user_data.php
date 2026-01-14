@@ -15,7 +15,7 @@
                     $hlm = (isset($_POST['hlm'])) ? $_POST['hlm'] : 1;
                     $limit = 4;
                     $limit_start = ($hlm - 1) * $limit;
-                    $no = $limit_start + 1;
+                    $no = $limit_start + 1; 
 
                     $sql = "SELECT * FROM user ORDER BY id DESC LIMIT $limit_start, $limit";
                     $hasil = $conn->query($sql);
